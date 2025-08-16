@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "vlzware"
+  ],
+  "contributors": [
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "sjwarner",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "matching_brackets.c",
+      "matching_brackets.h"
+    ],
+    "test": [
+      "test_matching_brackets.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}

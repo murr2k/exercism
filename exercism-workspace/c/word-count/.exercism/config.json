@@ -1,0 +1,32 @@
+{
+  "authors": [
+    "StevenRoot"
+  ],
+  "contributors": [
+    "bcc32",
+    "Bulagro",
+    "ethagnawl",
+    "Gamecock",
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "sesamemucho",
+    "ShadowWolf387",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "word_count.c",
+      "word_count.h"
+    ],
+    "test": [
+      "test_word_count.c"
+    ],
+    "example": [
+      ".meta/example.c"
+    ]
+  },
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

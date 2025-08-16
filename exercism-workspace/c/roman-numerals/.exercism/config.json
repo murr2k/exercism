@@ -1,0 +1,33 @@
+{
+  "authors": [
+    "RealBarrettBrown"
+  ],
+  "contributors": [
+    "bcc32",
+    "Gamecock",
+    "gea-migration",
+    "h-3-0",
+    "jagdish-15",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99",
+    "Zarimax"
+  ],
+  "files": {
+    "solution": [
+      "roman_numerals.c",
+      "roman_numerals.h"
+    ],
+    "test": [
+      "test_roman_numerals.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}

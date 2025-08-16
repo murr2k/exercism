@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "wolf99"
+  ],
+  "contributors": [
+    "ryanplusplus"
+  ],
+  "files": {
+    "solution": [
+      "pythagorean_triplet.c",
+      "pythagorean_triplet.h"
+    ],
+    "test": [
+      "test_pythagorean_triplet.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Given an integer N, find all Pythagorean triplets for which a + b + c = N.",
+  "source": "A variation of Problem 9 from Project Euler",
+  "source_url": "https://projecteuler.net/problem=9"
+}

@@ -1,0 +1,29 @@
+{
+  "authors": [
+    "StevenRoot"
+  ],
+  "contributors": [
+    "bcc32",
+    "Gamecock",
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "meetup.c",
+      "meetup.h"
+    ],
+    "test": [
+      "test_meetup.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Calculate the date of meetups.",
+  "source": "Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month"
+}

@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "vlzware"
+  ],
+  "contributors": [
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "run_length_encoding.c",
+      "run_length_encoding.h"
+    ],
+    "test": [
+      "test_run_length_encoding.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Implement run-length encoding and decoding.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
+}

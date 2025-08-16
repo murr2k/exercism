@@ -1,0 +1,30 @@
+{
+  "authors": [
+    "vlzware"
+  ],
+  "contributors": [
+    "h-3-0",
+    "jagdish-15",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "sjwarner",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "crypto_square.c",
+      "crypto_square.h"
+    ],
+    "test": [
+      "test_crypto_square.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Implement the classic method for composing secret messages called a square code.",
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "https://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}
