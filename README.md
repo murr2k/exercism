@@ -3,7 +3,7 @@
 This repository contains my solutions to the Exercism C programming track, completed using an autonomous Playwright-based solver.
 
 ## 📊 Overall Statistics
-- **Total Exercises Solved**: 60 C exercises
+- **Total Exercises Solved**: 76 C exercises
 - **Success Rate**: 100% of attempted exercises passed all tests
 - **Completion Date**: August 16, 2025
 - **Automation**: Fully autonomous solving using custom Node.js/Playwright solver
@@ -17,7 +17,7 @@ This repository contains my solutions to the Exercism C programming track, compl
 4. **resistor-color** - Enums and array indexing
 5. **hamming** - String comparison and error counting
 
-### Mathematics & Algorithms (6-17)
+### Mathematics & Algorithms (6-20)
 6. **grains** - Exponential growth and bit manipulation
 7. **difference-of-squares** - Mathematical formulas
 8. **armstrong-numbers** - Number decomposition and powers
@@ -30,57 +30,73 @@ This repository contains my solutions to the Exercism C programming track, compl
 15. **rational-numbers** - Fraction arithmetic with GCD
 16. **complex-numbers** - Complex arithmetic and Euler's formula
 17. **pascals-triangle** - Dynamic memory and combinatorics
+18. **pythagorean-triplet** - Finding Pythagorean triplets with sum constraint
+19. **largest-series-product** - Finding maximum product in consecutive digits
+20. **knapsack** - Dynamic programming optimization
 
-### String Processing (18-29)
-18. **isogram** - Character frequency tracking
-19. **reverse-string** - In-place string reversal
-20. **acronym** - String parsing and word extraction
-21. **raindrops** - Number to string conversion
-22. **pangram** - Alphabet checking
-23. **anagram** - String sorting and comparison
-24. **roman-numerals** - Number system conversion
-25. **run-length-encoding** - Compression algorithm
-26. **atbash-cipher** - Character substitution cipher
-27. **rotational-cipher** - Caesar cipher implementation
-28. **beer-song** - Dynamic text generation
-29. **word-count** - Text parsing and counting
+### String Processing (21-35)
+21. **isogram** - Character frequency tracking
+22. **reverse-string** - In-place string reversal
+23. **acronym** - String parsing and word extraction
+24. **raindrops** - Number to string conversion
+25. **pangram** - Alphabet checking
+26. **anagram** - String sorting and comparison
+27. **roman-numerals** - Number system conversion
+28. **run-length-encoding** - Compression algorithm
+29. **atbash-cipher** - Character substitution cipher
+30. **rotational-cipher** - Caesar cipher implementation
+31. **beer-song** - Dynamic text generation
+32. **word-count** - Text parsing and counting
+33. **crypto-square** - Classic square cipher algorithm
+34. **pig-latin** - Text translation with linguistic rules
+35. **rail-fence-cipher** - Zigzag transposition cipher
 
-### Data Structures (30-34)
-30. **linked-list** - Doubly-linked list implementation
-31. **circular-buffer** - Ring buffer with overwrite
-32. **list-ops** - Functional list operations
-33. **matching-brackets** - Stack-based validation
-34. **binary-search** - Efficient searching algorithm
+### Data Structures (36-42)
+36. **linked-list** - Doubly-linked list implementation
+37. **circular-buffer** - Ring buffer with overwrite
+38. **list-ops** - Functional list operations
+39. **matching-brackets** - Stack-based validation
+40. **binary-search** - Efficient searching algorithm
+41. **binary-search-tree** - Tree structure with traversal
+42. **variable-length-quantity** - VLQ encoding/decoding
 
-### Game Logic & Simulation (35-43)
-35. **darts** - Coordinate geometry
-36. **space-age** - Planetary calculations
-37. **gigasecond** - Time manipulation
-38. **allergies** - Bit flags and masking
-39. **bob** - Pattern matching and responses
-40. **triangle** - Triangle inequality validation
-41. **queen-attack** - Chess piece movement
-42. **robot-simulator** - Direction and movement
-43. **secret-handshake** - Binary to actions
+### Game Logic & Simulation (43-52)
+43. **darts** - Coordinate geometry
+44. **space-age** - Planetary calculations
+45. **gigasecond** - Time manipulation
+46. **allergies** - Bit flags and masking
+47. **bob** - Pattern matching and responses
+48. **triangle** - Triangle inequality validation
+49. **queen-attack** - Chess piece movement
+50. **robot-simulator** - Direction and movement
+51. **secret-handshake** - Binary to actions
+52. **yacht** - Dice scoring game (Yahtzee-like)
 
-### Advanced Challenges (44-60)
-44. **nucleotide-count** - DNA sequence analysis
-45. **phone-number** - NANP validation
-46. **scrabble-score** - Letter scoring system
-47. **luhn** - Credit card validation
-48. **sum-of-multiples** - Set operations
-49. **clock** - Time arithmetic without dates
-50. **grade-school** - Student roster management
-51. **saddle-points** - Matrix analysis
-52. **series** - Substring extraction
-53. **diamond** - ASCII art generation
-54. **sublist** - List relationship detection
-55. **all-your-base** - Base conversion
-56. **meetup** - Complex date calculations
-57. **kindergarten-garden** - Pattern parsing
-58. **perfect-numbers** - Number theory
-59. **triangle** - Geometric validation
-60. **circular-buffer** - Advanced data structure
+### Advanced Challenges (53-76)
+53. **nucleotide-count** - DNA sequence analysis
+54. **phone-number** - NANP validation
+55. **scrabble-score** - Letter scoring system
+56. **luhn** - Credit card validation
+57. **sum-of-multiples** - Set operations
+58. **clock** - Time arithmetic without dates
+59. **grade-school** - Student roster management
+60. **saddle-points** - Matrix analysis
+61. **series** - Substring extraction
+62. **diamond** - ASCII art generation
+63. **sublist** - List relationship detection
+64. **all-your-base** - Base conversion
+65. **meetup** - Complex date calculations
+66. **kindergarten-garden** - Pattern parsing
+67. **rna-transcription** - DNA to RNA conversion
+68. **high-scores** - Game score management
+69. **spiral-matrix** - Matrix generation in spiral order
+70. **etl** - Extract, Transform, Load data conversion
+71. **protein-translation** - RNA codon to protein translation
+72. **wordy** - Word problem parser and evaluator
+73. **say** - Number to English words converter
+74. **react** - Reactive programming with cells and callbacks
+75. **zebra-puzzle** - Constraint satisfaction logic puzzle
+76. **two-bucket** - Water pouring puzzle with BFS
 
 ## 🔧 Autonomous Solver Architecture
 
@@ -100,7 +116,7 @@ exercism/
 │   └── CSolutionGenerator.js # C code generation logic
 ├── cli-solve.js             # CLI entry point
 ├── solve.js                  # Web automation entry point
-└── exercism-workspace/      # Downloaded exercises (60 completed)
+└── exercism-workspace/      # Downloaded exercises (76 completed)
 ```
 
 ## 🚀 Getting Started
@@ -146,6 +162,8 @@ node cli-solve.js --all
 - O(1) space complexity where possible
 - Efficient prime number generation with Sieve of Eratosthenes
 - Binary search for logarithmic time lookups
+- BFS for optimal pathfinding in Two-Bucket puzzle
+- Dynamic programming for Knapsack optimization
 
 ### Code Quality
 - Clean, readable code following C best practices
@@ -160,6 +178,9 @@ node cli-solve.js --all
 - Complex number operations including exponentials
 - Date/time calculations without standard library functions
 - Base conversion for arbitrary number systems
+- Reactive programming system with dependency tracking
+- Constraint satisfaction solver for logic puzzles
+- VLQ encoding/decoding for MIDI protocol
 
 ## 📝 Development Process
 
@@ -174,17 +195,49 @@ Each exercise followed a systematic approach:
 
 ## 🏆 Accomplishments
 
-- Successfully completed **60 exercises** autonomously
+- Successfully completed **76 exercises** autonomously
 - Achieved **100% test pass rate** across all exercises
 - Demonstrated proficiency in:
-  - Data structures (lists, buffers, trees)
-  - Algorithms (searching, sorting, mathematical)
+  - Data structures (lists, buffers, trees, hash tables)
+  - Algorithms (searching, sorting, mathematical, graph traversal)
   - String processing and parsing
   - Memory management
   - Error handling
   - Test-driven development
+  - Advanced programming concepts (reactive systems, constraint satisfaction)
 - All solutions submitted and accepted by Exercism
 - Full GitHub integration with automatic PR merging
+
+## 📚 Notable Complex Exercises
+
+### React (Exercise #74)
+Implemented a complete reactive programming system with:
+- Input and compute cells with automatic value propagation
+- Callback system that fires when cell values change
+- Proper memory management and circular dependency handling
+
+### Zebra Puzzle (Exercise #75)
+Solved the famous Einstein's Riddle using:
+- Constraint satisfaction with backtracking
+- Efficient pruning to reduce search space
+- Correctly identified that the Norwegian drinks water and the Japanese owns the zebra
+
+### Two-Bucket (Exercise #76)
+Implemented the classic water pouring puzzle using:
+- Breadth-First Search (BFS) for finding minimum moves
+- Hash table for visited state tracking
+- GCD-based impossibility detection
+
+### Knapsack (Exercise #20)
+Dynamic programming solution with:
+- Space-optimized 1D array implementation
+- Optimal subset selection for maximum value
+
+### Variable Length Quantity (Exercise #42)
+Complex bit manipulation for:
+- Encoding integers into variable-length format
+- Decoding with proper error handling
+- Used in MIDI and other protocols
 
 ---
 
