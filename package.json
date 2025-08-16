@@ -7,6 +7,9 @@
     "start": "node solve.js",
     "solve": "node solve.js --exercise",
     "solve-all": "node solve.js --all",
+    "multi": "node multi-track-solve.js",
+    "rust": "node multi-track-solve.js -t rust",
+    "c": "node multi-track-solve.js -t c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

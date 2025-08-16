@@ -1,14 +1,81 @@
-# Exercism C Track Solutions
+# Exercism Multi-Track Solutions
 
-This repository contains my solutions to the Exercism C programming track, completed using an autonomous Playwright-based solver.
+This repository contains autonomous solutions to multiple Exercism programming tracks, using a custom Playwright-based solver with language-specific solution generators.
 
-## 📊 Overall Statistics
-- **Total Exercises Solved**: 84 C exercises
+## 🛠️ Automation Architecture
+
+### Core Components
+- **Multi-Track Solver** (`multi-track-solve.js`): Main entry point supporting multiple language tracks
+- **Language-Specific Generators**:
+  - `CSolutionGenerator.js`: C language solution generation with memory management
+  - `RustSolutionGenerator.js`: Rust language solution generation with ownership patterns
+- **Exercism Integration**: CLI wrapper for downloading, testing, and submitting exercises
+- **GitHub Integration**: Automatic PR creation and merging
+
+### Supported Languages
+- ✅ **C** - 84 exercises completed (100% success rate)
+- 🚀 **Rust** - Ready for autonomous solving
+- 🔜 More languages coming soon...
+
+## 📊 C Track Statistics
+- **Total Exercises Solved**: 84 exercises
 - **Success Rate**: 100% of attempted exercises passed all tests
 - **Completion Date**: August 16, 2025
-- **Automation**: Fully autonomous solving using custom Node.js/Playwright solver
 
-## 🎯 Completed Exercises
+## 🦀 Rust Track (Ready to Start)
+- **Status**: Infrastructure prepared, solution generator implemented
+- **Features**: 
+  - Pattern matching for common Rust idioms
+  - Memory safety patterns
+  - Error handling with Result/Option types
+  - Trait implementations
+
+## 🚀 Quick Start
+
+### Setup
+```bash
+# Install dependencies
+npm install
+
+# Set up Exercism token
+echo "EXERCISM_TOKEN=your-token-here" > .env
+```
+
+### Running the Solver
+
+#### C Track
+```bash
+# Solve specific C exercise
+node multi-track-solve.js -t c -e hello-world
+
+# Solve first 10 C exercises
+node multi-track-solve.js -t c -c 10
+
+# Solve all C exercises
+node multi-track-solve.js -t c -a
+```
+
+#### Rust Track
+```bash
+# Solve specific Rust exercise
+node multi-track-solve.js -t rust -e hello-world
+
+# Solve first 10 Rust exercises
+node multi-track-solve.js -t rust -c 10
+
+# Solve all Rust exercises
+node multi-track-solve.js -t rust -a
+```
+
+### Options
+- `-t, --track <track>`: Programming language (c, rust)
+- `-e, --exercise <slug>`: Specific exercise to solve
+- `-a, --all`: Solve all available exercises
+- `-c, --count <n>`: Number of exercises to solve
+- `--headless`: Run browser in headless mode
+- `--merge-pr`: Auto-merge GitHub PRs after submission
+
+## 🎯 C Track Completed Exercises
 
 ### Core Concepts (1-5)
 1. **hello-world** - Basic C program structure
