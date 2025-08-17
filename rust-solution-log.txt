@@ -1,0 +1,73 @@
+[dotenv@17.2.1] injecting env (3) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+🦀 Rust Exercise Solver
+──────────────────────────────────────────────────
+Fetching available exercises...
+Error getting exercises: Command failed: exercism list --track=rust --all
+Error: unknown command "list" for "exercism"
+
+Did you mean this?
+	test
+
+Run 'exercism --help' for usage.
+
+Found 15 exercises
+
+[1/97] Processing hello-world...
+
+🔧 Solving hello-world...
+Exercise hello-world already downloaded
+Generating solution...
+✓ Local tests passed
+Submitting to Exercism...
+Error solving hello-world: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/hello-world/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+Progress: 0 completed, 1 failed
+
+[2/97] Processing leap...
+
+🔧 Solving leap...
+Exercise leap already downloaded
+Generating solution...
+Error generating solution for leap: Error: Cannot find lib.rs or main.rs for leap
+    at RustSolutionGenerator.generateSolution (/home/murr2k/projects/exercism/src/RustSolutionGenerator.js:32:17)
+    at async solveExercise (/home/murr2k/projects/exercism/rust-cli-solver.js:46:20)
+    at async main (/home/murr2k/projects/exercism/rust-cli-solver.js:173:20)
+Initial solution failed, attempting to fix...
+Error solving leap: ENOENT: no such file or directory, open '/home/murr2k/projects/exercism/exercism-workspace/rust/leap/src/lib.rs'
+Progress: 0 completed, 2 failed
+
+[3/97] Processing reverse-string...
+
+🔧 Solving reverse-string...
+Exercise reverse-string already downloaded
+Generating solution...
+✓ Local tests passed
+Submitting to Exercism...
+Error solving reverse-string: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/reverse-string/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+Progress: 0 completed, 3 failed
+
+[4/97] Processing gigasecond...
+
+🔧 Solving gigasecond...
+Exercise gigasecond already downloaded
+Generating solution...
+✓ Local tests passed
+Submitting to Exercism...
+Error solving gigasecond: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/gigasecond/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+Progress: 0 completed, 4 failed
+
+[5/97] Processing bob...
+
+🔧 Solving bob...
+Exercise bob already downloaded
+Generating solution...
+✓ Local tests passed
+Submitting to Exercism...
+Error solving bob: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/bob/src/lib.rs
+Error: No files you submitted have changed since your last submission
+

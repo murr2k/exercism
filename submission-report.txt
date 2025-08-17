@@ -1,0 +1,226 @@
+🦀 Rust Exercise Submission Tool
+================================
+Found 71 exercises
+
+Checking which exercises are solved...
+Checking acronym... ✓ solved
+Checking affine-cipher... ✓ solved
+Checking all-your-base... ✓ solved
+Checking allergies... ✓ solved
+Checking alphametics... - not solved
+Checking anagram... ✓ solved
+Checking armstrong-numbers... ✓ solved
+Checking atbash-cipher... ✓ solved
+Checking binary-search... ✓ solved
+Checking bob... ✓ solved
+Checking bowling... - not solved
+Checking clock... - not solved
+Checking collatz-conjecture... ✓ solved
+Checking crypto-square... - not solved
+Checking custom-set... - not solved
+Checking difference-of-squares... ✓ solved
+Checking dominoes... - not solved
+Checking etl... ✓ solved
+Checking gigasecond... ✓ solved
+Checking grade-school... - not solved
+Checking grains... ✓ solved
+Checking hamming... ✓ solved
+Checking hello-world... ✓ solved
+Checking high-scores... ✓ solved
+Checking isogram... ✓ solved
+Checking kindergarten-garden... - not solved
+Checking largest-series-product... - not solved
+Checking leap... ✓ solved
+Checking list-ops... - not solved
+Checking luhn... ✓ solved
+Checking matching-brackets... - not solved
+Checking matrix... - not solved
+Checking nth-prime... - not solved
+Checking nucleotide-count... - not solved
+Checking ocr-numbers... - not solved
+Checking paasio... - not solved
+Checking pangram... - not solved
+Checking parallel-letter-frequency... - not solved
+Checking perfect-numbers... - not solved
+Checking phone-number... - not solved
+Checking pig-latin... - not solved
+Checking poker... - not solved
+Checking prime-factors... ✓ solved
+Checking protein-translation... - not solved
+Checking proverb... - not solved
+Checking queen-attack... - not solved
+Checking rail-fence-cipher... - not solved
+Checking raindrops... ✓ solved
+Checking reverse-string... ✓ solved
+Checking rna-transcription... ✓ solved
+Checking roman-numerals... - not solved
+Checking rotational-cipher... - not solved
+Checking run-length-encoding... ✓ solved
+Checking saddle-points... - not solved
+Checking say... - not solved
+Checking scrabble-score... - not solved
+Checking secret-handshake... - not solved
+Checking series... ✓ solved
+Checking sieve... - not solved
+Checking simple-cipher... ✓ solved
+Checking simple-linked-list... - not solved
+Checking space-age... - not solved
+Checking spiral-matrix... - not solved
+Checking sublist... - not solved
+Checking sum-of-multiples... - not solved
+Checking tournament... - not solved
+Checking triangle... - not solved
+Checking variable-length-quantity... - not solved
+Checking word-count... - not solved
+Checking wordy... - not solved
+Checking yacht... - not solved
+
+Found 27 solved exercises to submit
+
+
+[1/27] Processing acronym
+Submitting acronym...
+❌ Error submitting acronym: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/acronym/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+
+[2/27] Processing affine-cipher
+Submitting affine-cipher...
+❌ Error submitting affine-cipher: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/affine-cipher/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+
+[3/27] Processing all-your-base
+Submitting all-your-base...
+❌ Error submitting all-your-base: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/all-your-base/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+
+[4/27] Processing allergies
+Submitting allergies...
+❌ Error submitting allergies: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/allergies/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+
+[5/27] Processing anagram
+Submitting anagram...
+❌ Error submitting anagram: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/anagram/src/lib.rs
+Error: No files you submitted have changed since your last submission
+
+
+[6/27] Processing armstrong-numbers
+Submitting armstrong-numbers...
+❌ Error submitting armstrong-numbers: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/armstrong-numbers/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 10 seconds
+
+
+[7/27] Processing atbash-cipher
+Submitting atbash-cipher...
+❌ Error submitting atbash-cipher: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/atbash-cipher/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 10 seconds
+
+
+[8/27] Processing binary-search
+Submitting binary-search...
+❌ Error submitting binary-search: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/binary-search/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 9 seconds
+
+
+[9/27] Processing bob
+Submitting bob...
+❌ Error submitting bob: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/bob/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 9 seconds
+
+
+[10/27] Processing collatz-conjecture
+Submitting collatz-conjecture...
+❌ Error submitting collatz-conjecture: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/collatz-conjecture/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 8 seconds
+
+
+[11/27] Processing difference-of-squares
+Submitting difference-of-squares...
+❌ Error submitting difference-of-squares: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/difference-of-squares/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 8 seconds
+
+
+[12/27] Processing etl
+Submitting etl...
+❌ Error submitting etl: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/etl/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 7 seconds
+
+
+[13/27] Processing gigasecond
+Submitting gigasecond...
+❌ Error submitting gigasecond: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/gigasecond/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 7 seconds
+
+
+[14/27] Processing grains
+Submitting grains...
+❌ Error submitting grains: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/grains/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 6 seconds
+
+
+[15/27] Processing hamming
+Submitting hamming...
+❌ Error submitting hamming: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/hamming/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 6 seconds
+
+
+[16/27] Processing hello-world
+Submitting hello-world...
+❌ Error submitting hello-world: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/hello-world/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 5 seconds
+
+
+[17/27] Processing high-scores
+Submitting high-scores...
+❌ Error submitting high-scores: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/high-scores/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 4 seconds
+
+
+[18/27] Processing isogram
+Submitting isogram...
+❌ Error submitting isogram: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/isogram/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 4 seconds
+
+
+[19/27] Processing leap
+Submitting leap...
+❌ Error submitting leap: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/leap/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 4 seconds
+
+
+[20/27] Processing luhn
+Submitting luhn...
+❌ Error submitting luhn: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/luhn/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 4 seconds
+
+
+[21/27] Processing prime-factors
+Submitting prime-factors...
+❌ Error submitting prime-factors: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/prime-factors/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 3 seconds
+
+
+[22/27] Processing raindrops
+Submitting raindrops...
+❌ Error submitting raindrops: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/raindrops/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 3 seconds
+
+
+[23/27] Processing reverse-string
+Submitting reverse-string...
+❌ Error submitting reverse-string: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/reverse-string/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 2 seconds
+
+
+[24/27] Processing rna-transcription
+Submitting rna-transcription...
+❌ Error submitting rna-transcription: Command failed: exercism submit /home/murr2k/projects/exercism/exercism-workspace/rust/rna-transcription/src/lib.rs
+Error: request failed with status 429 Too Many Requests; please try again after 2 seconds
+
+
+[25/27] Processing run-length-encoding
+Submitting run-length-encoding...
