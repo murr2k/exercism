@@ -6,7 +6,7 @@ const execPromise = util.promisify(exec);
 
 class RustSolutionGenerator {
   constructor() {
-    this.exerciseWorkspace = path.join(process.cwd(), 'exercism-workspace', 'rust');
+    this.exerciseWorkspace = '/home/murr2k/projects/exercism/exercism-workspace/rust';
   }
 
   async generateSolution(exerciseSlug) {
@@ -35,17 +35,21 @@ class RustSolutionGenerator {
       
       // Read the test file to understand requirements
       const testsPath = path.join(exercisePath, 'tests', `${exerciseSlug.replace(/-/g, '_')}.rs`);
-      let testContent;
+      let testContent = '';
       
       try {
         testContent = await fs.readFile(testsPath, 'utf8');
       } catch {
         // Sometimes tests are in src/lib.rs itself
-        const srcContent = await fs.readFile(exerciseFile, 'utf8');
-        if (srcContent.includes('#[test]') || srcContent.includes('#[cfg(test)]')) {
-          testContent = srcContent;
-        } else {
-          throw new Error(`Cannot find tests for ${exerciseSlug}`);
+        try {
+          const srcContent = await fs.readFile(exerciseFile, 'utf8');
+          if (srcContent.includes('#[test]') || srcContent.includes('#[cfg(test)]')) {
+            testContent = srcContent;
+          }
+        } catch {
+          // If no tests found, proceed with known solution if available
+          console.log(`Warning: No tests found for ${exerciseSlug}, using known solution`);
+          testContent = '';
         }
       }
       
@@ -58,8 +62,8 @@ class RustSolutionGenerator {
       // Write the solution
       await fs.writeFile(exerciseFile, solution);
       
-      // Run tests to verify
-      const { stdout, stderr } = await execPromise('cargo test', {
+      // Run tests to verify (including ignored tests)
+      const { stdout, stderr } = await execPromise('cargo test -- --include-ignored', {
         cwd: exercisePath
       });
       
@@ -74,7 +78,7 @@ class RustSolutionGenerator {
         const fixedSolution = await this.attemptFix(exerciseSlug, solution, stderr);
         if (fixedSolution) {
           await fs.writeFile(exerciseFile, fixedSolution);
-          const { stdout: stdout2 } = await execPromise('cargo test', {
+          const { stdout: stdout2 } = await execPromise('cargo test -- --include-ignored', {
             cwd: exercisePath
           });
           
@@ -312,6 +316,486 @@ pub fn total() -> u64 {
             num /= divisor;
         }
         divisor += 1;
+    }
+    
+    result
+}`;
+      
+      case 'sum-of-multiples':
+        return `pub fn sum_of_multiples(limit: u32, factors: &[u32]) -> u32 {
+    (1..limit)
+        .filter(|&n| factors.iter().any(|&f| f != 0 && n % f == 0))
+        .sum()
+}`;
+      
+      case 'hamming':
+        return `pub fn hamming_distance(s1: &str, s2: &str) -> Option<usize> {
+    if s1.len() != s2.len() {
+        return None;
+    }
+    
+    Some(
+        s1.chars()
+            .zip(s2.chars())
+            .filter(|(a, b)| a != b)
+            .count()
+    )
+}`;
+      
+      case 'space-age':
+        return `#[derive(Debug, PartialEq)]
+pub struct Duration {
+    seconds: u64,
+}
+
+impl From<u64> for Duration {
+    fn from(s: u64) -> Self {
+        Duration { seconds: s }
+    }
+}
+
+pub trait Planet {
+    fn years_during(d: &Duration) -> f64;
+}
+
+pub struct Mercury;
+pub struct Venus;
+pub struct Earth;
+pub struct Mars;
+pub struct Jupiter;
+pub struct Saturn;
+pub struct Uranus;
+pub struct Neptune;
+
+const EARTH_YEAR_SECONDS: f64 = 31_557_600.0;
+
+impl Planet for Mercury {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / (EARTH_YEAR_SECONDS * 0.2408467)
+    }
+}
+
+impl Planet for Venus {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / (EARTH_YEAR_SECONDS * 0.61519726)
+    }
+}
+
+impl Planet for Earth {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / EARTH_YEAR_SECONDS
+    }
+}
+
+impl Planet for Mars {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / (EARTH_YEAR_SECONDS * 1.8808158)
+    }
+}
+
+impl Planet for Jupiter {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / (EARTH_YEAR_SECONDS * 11.862615)
+    }
+}
+
+impl Planet for Saturn {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / (EARTH_YEAR_SECONDS * 29.447498)
+    }
+}
+
+impl Planet for Uranus {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / (EARTH_YEAR_SECONDS * 84.016846)
+    }
+}
+
+impl Planet for Neptune {
+    fn years_during(d: &Duration) -> f64 {
+        d.seconds as f64 / (EARTH_YEAR_SECONDS * 164.79132)
+    }
+}`;
+      
+      case 'nucleotide-count':
+        return `use std::collections::HashMap;
+
+pub fn count(nucleotide: char, dna: &str) -> Result<usize, char> {
+    if !"ACGT".contains(nucleotide) {
+        return Err(nucleotide);
+    }
+    
+    for c in dna.chars() {
+        if !"ACGT".contains(c) {
+            return Err(c);
+        }
+    }
+    
+    Ok(dna.chars().filter(|&c| c == nucleotide).count())
+}
+
+pub fn nucleotide_counts(dna: &str) -> Result<HashMap<char, usize>, char> {
+    let mut counts = HashMap::new();
+    counts.insert('A', 0);
+    counts.insert('C', 0);
+    counts.insert('G', 0);
+    counts.insert('T', 0);
+    
+    for c in dna.chars() {
+        if !"ACGT".contains(c) {
+            return Err(c);
+        }
+        *counts.get_mut(&c).unwrap() += 1;
+    }
+    
+    Ok(counts)
+}`;
+      
+      case 'rna-transcription':
+        return `#[derive(Debug, PartialEq)]
+pub struct Dna {
+    strand: String,
+}
+
+#[derive(Debug, PartialEq)]
+pub struct Rna {
+    strand: String,
+}
+
+impl Dna {
+    pub fn new(dna: &str) -> Result<Dna, usize> {
+        for (i, c) in dna.chars().enumerate() {
+            if !"ACGT".contains(c) {
+                return Err(i);
+            }
+        }
+        Ok(Dna { strand: dna.to_string() })
+    }
+
+    pub fn into_rna(self) -> Rna {
+        let rna_strand = self.strand
+            .chars()
+            .map(|c| match c {
+                'G' => 'C',
+                'C' => 'G',
+                'T' => 'A',
+                'A' => 'U',
+                _ => c,
+            })
+            .collect();
+        Rna { strand: rna_strand }
+    }
+}
+
+impl Rna {
+    pub fn new(rna: &str) -> Result<Rna, usize> {
+        for (i, c) in rna.chars().enumerate() {
+            if !"ACGU".contains(c) {
+                return Err(i);
+            }
+        }
+        Ok(Rna { strand: rna.to_string() })
+    }
+}`;
+      
+      case 'isogram':
+        return `use std::collections::HashSet;
+
+pub fn check(candidate: &str) -> bool {
+    let mut seen = HashSet::new();
+    
+    for c in candidate.chars() {
+        let c = c.to_ascii_lowercase();
+        if c.is_alphabetic() {
+            if seen.contains(&c) {
+                return false;
+            }
+            seen.insert(c);
+        }
+    }
+    
+    true
+}`;
+      
+      case 'scrabble-score':
+        return `pub fn score(word: &str) -> u64 {
+    word.chars()
+        .map(|c| {
+            match c.to_ascii_uppercase() {
+                'A' | 'E' | 'I' | 'O' | 'U' | 'L' | 'N' | 'R' | 'S' | 'T' => 1,
+                'D' | 'G' => 2,
+                'B' | 'C' | 'M' | 'P' => 3,
+                'F' | 'H' | 'V' | 'W' | 'Y' => 4,
+                'K' => 5,
+                'J' | 'X' => 8,
+                'Q' | 'Z' => 10,
+                _ => 0,
+            }
+        })
+        .sum()
+}`;
+      
+      case 'luhn':
+        return `pub fn is_valid(code: &str) -> bool {
+    let code: String = code.chars().filter(|c| !c.is_whitespace()).collect();
+    
+    if code.len() <= 1 {
+        return false;
+    }
+    
+    if !code.chars().all(|c| c.is_ascii_digit()) {
+        return false;
+    }
+    
+    let sum: u32 = code
+        .chars()
+        .rev()
+        .enumerate()
+        .map(|(i, c)| {
+            let mut digit = c.to_digit(10).unwrap();
+            if i % 2 == 1 {
+                digit *= 2;
+                if digit > 9 {
+                    digit -= 9;
+                }
+            }
+            digit
+        })
+        .sum();
+    
+    sum % 10 == 0
+}`;
+      
+      case 'pangram':
+        return `use std::collections::HashSet;
+
+pub fn is_pangram(sentence: &str) -> bool {
+    let letters: HashSet<char> = sentence
+        .chars()
+        .filter(|c| c.is_ascii_alphabetic())
+        .map(|c| c.to_ascii_lowercase())
+        .collect();
+    
+    letters.len() == 26
+}`;
+      
+      case 'acronym':
+        return `pub fn abbreviate(phrase: &str) -> String {
+    phrase
+        .split(|c: char| c.is_whitespace() || c == '-' || c == '_')
+        .filter(|word| !word.is_empty())
+        .map(|word| {
+            // Check if word is all uppercase
+            if word.chars().all(|c| c.is_uppercase()) {
+                // For all-caps words, just take the first character
+                word.chars().next().unwrap().to_string()
+            } else {
+                // For mixed case, take first char and internal uppercase chars
+                let first_char = word.chars().next().unwrap().to_uppercase().collect::<String>();
+                let rest: String = word.chars()
+                    .skip(1)
+                    .filter(|c| c.is_uppercase())
+                    .map(|c| c.to_string())
+                    .collect();
+                first_char + &rest
+            }
+        })
+        .collect()
+}`;
+      
+      case 'two-fer':
+        return `pub fn twofer(name: &str) -> String {
+    if name.is_empty() {
+        "One for you, one for me.".to_string()
+    } else {
+        format!("One for {}, one for me.", name)
+    }
+}`;
+      
+      case 'resistor-color':
+        return `use enum_iterator::{all, Sequence};
+use int_enum::IntEnum;
+
+#[repr(usize)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, IntEnum, Sequence)]
+pub enum ResistorColor {
+    Black = 0,
+    Brown = 1,
+    Red = 2,
+    Orange = 3,
+    Yellow = 4,
+    Green = 5,
+    Blue = 6,
+    Violet = 7,
+    Grey = 8,
+    White = 9,
+}
+
+pub fn color_to_value(color: ResistorColor) -> usize {
+    color.int_value()
+}
+
+pub fn value_to_color_string(value: usize) -> String {
+    match ResistorColor::from_int(value) {
+        Ok(color) => format!("{:?}", color),
+        Err(_) => "value out of range".to_string(),
+    }
+}
+
+pub fn colors() -> Vec<ResistorColor> {
+    all::<ResistorColor>().collect()
+}`;
+      
+      case 'matching-brackets':
+        return `pub fn brackets_are_balanced(string: &str) -> bool {
+    let mut stack = Vec::new();
+    
+    for ch in string.chars() {
+        match ch {
+            '(' | '[' | '{' => stack.push(ch),
+            ')' => {
+                if stack.pop() != Some('(') {
+                    return false;
+                }
+            },
+            ']' => {
+                if stack.pop() != Some('[') {
+                    return false;
+                }
+            },
+            '}' => {
+                if stack.pop() != Some('{') {
+                    return false;
+                }
+            },
+            _ => {},
+        }
+    }
+    
+    stack.is_empty()
+}`;
+      
+      case 'word-count':
+        return `use std::collections::HashMap;
+
+pub fn word_count(words: &str) -> HashMap<String, u32> {
+    let mut counts = HashMap::new();
+    
+    let cleaned = words
+        .chars()
+        .map(|c| if c.is_alphanumeric() || c == '\'' { c } else { ' ' })
+        .collect::<String>();
+    
+    for word in cleaned.split_whitespace() {
+        let word = word.trim_matches('\'')
+            .to_lowercase();
+        if !word.is_empty() {
+            *counts.entry(word).or_insert(0) += 1;
+        }
+    }
+    
+    counts
+}`;
+      
+      case 'sublist':
+        return `#[derive(Debug, PartialEq)]
+pub enum Comparison {
+    Equal,
+    Sublist,
+    Superlist,
+    Unequal,
+}
+
+pub fn sublist<T: PartialEq>(first_list: &[T], second_list: &[T]) -> Comparison {
+    if first_list == second_list {
+        Comparison::Equal
+    } else if is_sublist(first_list, second_list) {
+        Comparison::Sublist
+    } else if is_sublist(second_list, first_list) {
+        Comparison::Superlist
+    } else {
+        Comparison::Unequal
+    }
+}
+
+fn is_sublist<T: PartialEq>(shorter: &[T], longer: &[T]) -> bool {
+    shorter.is_empty() || 
+    longer.windows(shorter.len()).any(|window| window == shorter)
+}`;
+      
+      case 'etl':
+        return `use std::collections::BTreeMap;
+
+pub fn transform(h: &BTreeMap<i32, Vec<char>>) -> BTreeMap<char, i32> {
+    let mut result = BTreeMap::new();
+    
+    for (&score, letters) in h {
+        for &letter in letters {
+            result.insert(letter.to_ascii_lowercase(), score);
+        }
+    }
+    
+    result
+}`;
+      
+      case 'series':
+        return `pub fn series(digits: &str, len: usize) -> Vec<String> {
+    if len == 0 {
+        return vec![String::new(); digits.len() + 1];
+    }
+    
+    if len > digits.len() {
+        return vec![];
+    }
+    
+    digits
+        .chars()
+        .collect::<Vec<_>>()
+        .windows(len)
+        .map(|window| window.iter().collect())
+        .collect()
+}`;
+      
+      case 'run-length-encoding':
+        return `pub fn encode(source: &str) -> String {
+    let mut result = String::new();
+    let mut chars = source.chars().peekable();
+    
+    while let Some(ch) = chars.next() {
+        let mut count = 1;
+        
+        while chars.peek() == Some(&ch) {
+            count += 1;
+            chars.next();
+        }
+        
+        if count == 1 {
+            result.push(ch);
+        } else {
+            result.push_str(&format!("{}{}", count, ch));
+        }
+    }
+    
+    result
+}
+
+pub fn decode(source: &str) -> String {
+    let mut result = String::new();
+    let mut count_str = String::new();
+    
+    for ch in source.chars() {
+        if ch.is_ascii_digit() {
+            count_str.push(ch);
+        } else {
+            let count = if count_str.is_empty() {
+                1
+            } else {
+                count_str.parse().unwrap_or(1)
+            };
+            
+            result.push_str(&ch.to_string().repeat(count));
+            count_str.clear();
+        }
     }
     
     result
